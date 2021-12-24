@@ -53,8 +53,14 @@ $browsers: '', '-moz-', '-webkit-', '-ms-'
 		flex-basis: 0
 		flex-grow: 1
 		flex-shrink: 1
-		padding: 0.5em
+		padding: 0 0.5em
 		overflow: auto
+		&:first-child
+			padding-left: 0
+		&:last-child
+			padding-right: 0
+		.columns
+			margin-top: 1rem
 *
 	box-sizing: border-box
 body
@@ -144,7 +150,7 @@ main
 					color: lighten($font-color, 50%)
 				&[type="date"]
 					font-family: $font-family
-				&[type="text"]
+				&[type="text"], &[type="date"], &[type="password"], &[type="number"]
 					width: 100%
 	table
 		width: 100%
