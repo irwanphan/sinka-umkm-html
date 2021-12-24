@@ -81,6 +81,10 @@ main
 			padding: 0
 			height: $form-fieldset-height
 			margin-bottom: $form-fieldset-margin-after
+			display: flex
+			> label
+				width: 17.5rem
+				padding-top: .875rem
 			label
 				text-transform: capitalize
 			input
@@ -89,6 +93,9 @@ main
 				line-height: $form-fieldset-height
 				border: 0
 				font-size: 1rem
+				flex-grow: 1
+				overflow: hidden
+				text-overflow: ellipsis
 				&::-webkit-input-placeholder
 					color: lighten($font-color, 50%)
 				&:-ms-input-placeholder
