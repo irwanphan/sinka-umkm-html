@@ -69,6 +69,12 @@ header
 					line-height: $nav-menu-height
 					padding: $nav-menu-padding
 					display: block
+					+borderRadius(.5rem)
+					+transition(.3s)
+					&.active
+						background-color: $white
+					&:hover
+						text-decoration: underline
 
 main
 	padding: $main-padding
