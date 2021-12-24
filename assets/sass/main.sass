@@ -45,7 +45,16 @@ $browsers: '', '-moz-', '-webkit-', '-ms-'
 	&::after
 		float: none
 		clear: both
-
+.columns
+	display: flex
+	width: 100%
+	.column, > *
+		display: block
+		flex-basis: 0
+		flex-grow: 1
+		flex-shrink: 1
+		padding: 0.5em
+		overflow: auto
 *
 	box-sizing: border-box
 body
@@ -109,15 +118,15 @@ main
 			border: 0
 			margin: 0
 			padding: 0
-			height: $form-fieldset-height
+			min-height: $form-fieldset-height
 			margin-bottom: $form-fieldset-margin-after
 			display: flex
 			> label
-				width: 17.5rem
+				min-width: 17.5rem
 				padding-top: .875rem
 			label
 				text-transform: capitalize
-			input
+			input, select
 				background-color: $form-fieldset-bgcolor
 				padding: $form-fieldset-input-padding
 				line-height: $form-fieldset-height
@@ -133,6 +142,10 @@ main
 					color: lighten($font-color, 50%)
 				&::placeholder
 					color: lighten($font-color, 50%)
+				&[type="date"]
+					font-family: $font-family
+				&[type="text"]
+					width: 100%
 	table
 		width: 100%
 		border-collapse: collapse
@@ -161,6 +174,7 @@ main
 				th
 					border-bottom: 1px solid $black
 	button, .button, a.button
+		text-align: center
 		font-size: $font-size
 		height: $form-button-height
 		line-height: $form-button-height

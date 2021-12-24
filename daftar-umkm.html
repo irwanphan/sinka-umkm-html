@@ -44,7 +44,16 @@
             </fieldset>
             <fieldset>
                 <label for="">jenis kelamin</label>
-                <!-- <input type="text" placeholder="Hawry Potah"> -->
+                <div class="columns">
+                    <div class="column">
+                        <input type="radio" name="jenis-kelamin" id="">
+                        <label for="">laki-laki</label>
+                    </div>
+                    <div class="column">
+                        <input type="radio" name="jenis-kelamin" id="">
+                        <label for="">perempuan</label>
+                    </div>
+                </div>
             </fieldset>
             <fieldset>
                 <label for="">alamat tempat tinggal</label>
@@ -70,11 +79,28 @@
             </fieldset>
             <fieldset>
                 <label for="">perizinan yang dimiliki</label>
-                <input type="text" placeholder="032842739842">
+                <div>
+                    <input type="text" placeholder="KBLI">
+                    <div class="columns">
+                        <div class="column">
+                            <input type="date" placeholder="tanggal">
+                        </div>
+                        <div class="column">
+                            <input type="text" placeholder="IUMK no.">
+                        </div>
+                    </div>
+                </div>
             </fieldset>
             <fieldset>
                 <label for="">jenis badan usaha</label>
-                <input type="text" placeholder="perorangan">
+                <select>
+                    <option disabled selected value="">-pilih jenis badan usaha-</option>
+                    <option value="">perseorangan</option>
+                    <option value="">CV</option>
+                    <option value="">PT</option>
+                    <option value="">UD</option>
+                    <option value="">lainnya</option>
+                </select>
             </fieldset>
             <fieldset>
                 <label for="">alamat tempat usaha</label>
@@ -90,7 +116,14 @@
             </fieldset>
             <fieldset>
                 <label for="">jumlah karyawan</label>
-                <input type="text" placeholder="laki-laki">
+                <div class="columns">
+                    <div class="column">
+                        <input type="text" placeholder="laki-laki">
+                    </div>
+                    <div class="column">
+                        <input type="text" placeholder="perempuan">
+                    </div>
+                </div>
             </fieldset>
 
             <button type="submit" class="button submit full">simpan data UMKM</button>
