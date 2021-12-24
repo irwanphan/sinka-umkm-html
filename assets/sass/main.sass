@@ -1,8 +1,10 @@
 $black: #000000
 $white: #ffffff
+$gray: #888888
 $gray-light: #F8F8F8
 
-$orange-light: #ffd888
+$red-light: #ff8888
+$orange-light: #ffdb8a
 
 $font-family: Poppins, "Century Gothic", Tahoma, Lato, Calibri Light, Arial
 $font-size: 1rem
@@ -21,9 +23,11 @@ $form-fieldset-height: 3rem
 $form-fieldset-bgcolor: $gray-light
 $form-fieldset-input-padding: 0 1.5rem
 $form-fieldset-margin-after: 1.25rem
-$form-submit-button-color: $white
+$form-button-color: $white
+$form-button-bgcolor: $gray
+$form-button-padding: 0 .75rem
 $form-submit-button-bgcolor: $black
-$form-submit-button-padding: 0 .75rem
+$form-danger-button-bgcolor: $red-light
 
 $table-col-padding: .675rem .5rem
 
@@ -107,18 +111,6 @@ main
 					color: lighten($font-color, 50%)
 				&::placeholder
 					color: lighten($font-color, 50%)
-		button, .button
-			height: $form-fieldset-height
-			line-height: $form-fieldset-height
-			background-color: $form-submit-button-bgcolor
-			color: $form-submit-button-color
-			font-weight: 600
-			padding: $form-submit-button-padding
-			cursor: pointer
-			+borderRadius(.5rem)
-			&.full
-				display: block
-				width: 100%
 	table
 		width: 100%
 		border-collapse: collapse
@@ -140,3 +132,23 @@ main
 		thead
 			tr th
 				border-bottom: 1px solid $black
+	button, .button
+		font-size: $font-size
+		height: 2.25rem
+		border: 0
+		padding: $form-button-padding
+		background-color: $form-button-bgcolor
+		color: $form-button-color
+		cursor: pointer
+		letter-spacing: .0625rem
+		+borderRadius(.5rem)
+		+transition(.3s)
+		&.full
+			display: block
+			width: 100%
+		&.submit
+			background-color: $form-submit-button-bgcolor
+		&.danger
+			background-color: $form-danger-button-bgcolor
+		&:hover
+			box-shadow: 0 0 .5rem .25rem rgba(0, 0, 0, .08)
