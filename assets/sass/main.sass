@@ -3,6 +3,7 @@ $gray-light: #F8F8F8
 
 $font-family: Poppins, "Century Gothic", Tahoma, Lato, Calibri Light, Arial
 $font-size: 1rem
+$font-color: $black
 
 $nav-color: $black
 $nav-bgcolor: $gray-light
@@ -12,6 +13,11 @@ $nav-menu-padding: 0 1.5rem
 $nav-menu-height: 3rem
 
 $main-padding: 4rem
+
+$form-fieldset-height: 3rem
+$form-fieldset-bgcolor: $gray-light
+$form-fieldset-input-padding: 0 1.5rem
+$form-fieldset-margin-after: 1.25rem
 
 *
     box-sizing: border-box
@@ -47,13 +53,34 @@ main
     padding: $main-padding
     padding-left: $nav-width-desktop+$main-padding
     h1
+        text-transform: capitalize
         font-size: 2rem
         margin: 0
         margin-bottom: 3rem
     h2
+        text-transform: capitalize
         font-size: 1.5rem
         margin: 0
         margin-bottom: 2rem
     form
         fieldset
             border: 0
+            margin: 0
+            padding: 0
+            height: $form-fieldset-height
+            margin-bottom: $form-fieldset-margin-after
+            label
+                text-transform: capitalize
+            input
+                background-color: $form-fieldset-bgcolor
+                padding: $form-fieldset-input-padding
+                line-height: $form-fieldset-height
+                border: 0
+                font-size: 1rem
+                &::-webkit-input-placeholder
+                    color: lighten($font-color, 50%)
+                &:-ms-input-placeholder
+                    color: lighten($font-color, 50%)
+                &::placeholder
+                    color: lighten($font-color, 50%)
+                
