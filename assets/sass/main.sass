@@ -2,6 +2,8 @@ $black: #000000
 $white: #ffffff
 $gray-light: #F8F8F8
 
+$orange-light: #ffd888
+
 $font-family: Poppins, "Century Gothic", Tahoma, Lato, Calibri Light, Arial
 $font-size: 1rem
 $font-color: $black
@@ -22,6 +24,8 @@ $form-fieldset-margin-after: 1.25rem
 $form-submit-button-color: $white
 $form-submit-button-bgcolor: $black
 $form-submit-button-padding: 0 .75rem
+
+$table-col-padding: .675rem .5rem
 
 $browsers: '', '-moz-', '-webkit-', '-ms-'
 =transition($sec, $type: all, $accel: ease)
@@ -96,6 +100,7 @@ main
 				flex-grow: 1
 				overflow: hidden
 				text-overflow: ellipsis
+				white-space: nowrap
 				&::-webkit-input-placeholder
 					color: lighten($font-color, 50%)
 				&:-ms-input-placeholder
@@ -114,4 +119,24 @@ main
 			&.full
 				display: block
 				width: 100%
-				
+	table
+		width: 100%
+		border-collapse: collapse
+		tr
+			+transition(.2s)
+			th, td
+				padding: $table-col-padding
+				border: 1px solid $gray-light
+				text-align: left
+				&:first-child
+					text-align: center
+				&:last-child
+					text-align: center
+					white-space: nowrap
+			&:nth-child(even)
+				background-color: $gray-light
+			&:hover
+				background-color: $orange-light
+		thead
+			tr th
+				border-bottom: 1px solid $black
