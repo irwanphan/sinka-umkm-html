@@ -23,9 +23,10 @@ $form-fieldset-height: 3rem
 $form-fieldset-bgcolor: $gray-light
 $form-fieldset-input-padding: 0 1.5rem
 $form-fieldset-margin-after: 1.25rem
+$form-button-height: 2.25rem
 $form-button-color: $white
 $form-button-bgcolor: $gray
-$form-button-padding: 0 .75rem
+$form-button-padding: 0 .875rem
 $form-submit-button-bgcolor: $black
 $form-danger-button-bgcolor: $red-light
 
@@ -38,6 +39,12 @@ $browsers: '', '-moz-', '-webkit-', '-ms-'
 =borderRadius($radius: 50%)
 	@each $browser in $browsers
 		#{$browser}border-radius: $radius
+
+.float-right
+	float: right
+	&::after
+		float: none
+		clear: both
 
 *
 	box-sizing: border-box
@@ -137,20 +144,26 @@ main
 				padding: .375rem .75rem
 			&:nth-child(even)
 				background-color: $gray-light
-			&:hover
-				background-color: $orange-light
+		tbody
+			tr
+				&:hover
+					background-color: $orange-light
 		thead
-			tr th
-				border-bottom: 1px solid $black
-	button, .button
+			tr 
+				th
+					border-bottom: 1px solid $black
+	button, .button, a.button
 		font-size: $font-size
-		height: 2.25rem
+		height: $form-button-height
+		line-height: $form-button-height
 		border: 0
+		text-decoration: none
 		padding: $form-button-padding
 		background-color: $form-button-bgcolor
 		color: $form-button-color
 		cursor: pointer
 		letter-spacing: .0625rem
+		display: inline-block
 		+borderRadius(.5rem)
 		+transition(.3s)
 		&.full
