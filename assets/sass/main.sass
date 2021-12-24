@@ -85,7 +85,15 @@ header
 
 main
 	padding: $main-padding
-	padding-left: $nav-width-desktop+$main-padding
+	&.login
+		max-width: 48.25rem
+		margin: 6rem auto 0
+		h1
+			text-align: center
+		form
+			padding: 1rem 3.5rem
+	&.content
+		padding-left: $nav-width-desktop+$main-padding
 	h1
 		text-transform: capitalize
 		font-size: 2rem
