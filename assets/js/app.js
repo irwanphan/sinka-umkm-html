@@ -23,6 +23,7 @@ const login = () => {
             // console.log(responseJson)
             const token = responseJson.token
             if (responseJson.success) {
+                localStorage.setItem('username', username)
                 localStorage.setItem('token', token)
                 // console.log(token)
                 window.location.replace('./index.html')
@@ -35,10 +36,19 @@ const login = () => {
 
 
 const fetchDaftarUMKM = () => {
+    var myHeaders = new Headers({'Content-Type': 'application/json'});  
+    myHeaders.append('Authorization','Bearer ')
+    
+    var requestOptions = {
+        method: 'GET',
+        headers: myHeaders,
+        redirect: 'follow'
+    };
+    
     const api_url = "http://api.kolektif-umkm.turbin.id/api/usaha"
     async function getapi(url) {
         // Storing response
-        const response = await fetch(url);
+        const response = await fetch(url, requestOptions);
         // Storing data in form of JSON
         var data = await response.json();
         console.log(data);
