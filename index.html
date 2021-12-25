@@ -41,7 +41,9 @@
             <a href="./daftar-umkm.html" class="button submit">daftar baru</a>
         </div>
 
-        <table>
+        <div id="loading"></div>
+
+        <table id="daftar_umkm">
             <thead>
                 <tr>
                     <th>No</th>
@@ -73,4 +75,9 @@
         </table>
     </main>
 </body>
+
+<script src="./assets/js/app.js"></script>
+<script>
+    fetchDaftarUMKM()
+</script>
 </html>

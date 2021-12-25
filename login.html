@@ -12,16 +12,18 @@
         <h1>Data Kolektif UMKM Kota Singkawang</h1>
         <form>
             <fieldset>
-                <label for="">nama pengguna</label>
-                <input type="text" placeholder="hawrypotah">
+                <label for="username">nomor HP pengguna</label>
+                <input id="username" type="text" placeholder="08134567890">
             </fieldset>
             <fieldset>
-                <label for="">nama pemilik usaha (sesuai KTP)</label>
-                <input type="password" placeholder="...sssssttttt">
+                <label for="password">kata sandi</label>
+                <input id="password" type="password" placeholder="...sssssttttt">
             </fieldset>
 
-            <a href="./index.html" class="button submit full">masuk</a>
+            <a class="button submit full" onclick="login()">masuk</a>
         </form>
     </main>
 </body>
+
+<script src="./assets/js/app.js"></script>
 </html>
