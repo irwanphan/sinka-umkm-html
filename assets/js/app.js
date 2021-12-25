@@ -36,8 +36,10 @@ const login = () => {
 
 
 const fetchDaftarUMKM = () => {
+    const token = localStorage.getItem('token')
+    console.log(token)
     var myHeaders = new Headers({'Content-Type': 'application/json'});  
-    myHeaders.append('Authorization','Bearer ')
+    myHeaders.append('Authorization','Bearer {token}')
     
     var requestOptions = {
         method: 'GET',
