@@ -20,13 +20,15 @@ const login = () => {
     fetch("http://api.kolektif-umkm.turbin.id/api/login", requestOptions)
         .then(response => response.json())
         .then(responseJson => {
-            
+            // console.log(responseJson)
+            const token = responseJson.token
+            if (responseJson.success) {
+                localStorage.setItem('token', token)
+                // console.log(token)
+                window.location.replace('./index.html')
+            } 
+            return responseJson.token
         })
-            // const token = response.token
-            // if (response.status == 200) {
-            //     localStorage.setItem('token', token)
-            //     console.log('asd')
-            // } 
         .catch(error => console.log('error', error))
 }
 
