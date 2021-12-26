@@ -204,3 +204,38 @@ main
 			background-color: $form-danger-button-bgcolor
 		&:hover
 			box-shadow: 0 0 .5rem .25rem rgba(0, 0, 0, .08)
+
+
+@media screen and ( max-width: 48rem )
+	header
+		nav
+			+transition(.3s)
+			left: -100%
+			width: 100%
+	main
+		&.content
+			padding-left: $main-padding
+	.columns
+		display: block
+	input#nav
+		display: none
+		&:checked
+			~
+				header
+					nav
+						left: 0
+		+ label
+			position: fixed
+			z-index: 88
+			display: block
+			position: absolute
+			top: 1rem
+			left: 1rem
+			content: "asd"
+			height: 2rem
+			line-height: 2rem
+			width: 2rem
+			text-align: center
+			+borderRadius(50%)
+			box-shadow: 0 0 .25rem .25rem rgba(0, 0, 0, 0.05)
+			cursor: pointer
