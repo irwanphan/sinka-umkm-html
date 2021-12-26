@@ -33,6 +33,9 @@ $form-danger-button-bgcolor: $red-light
 
 $table-col-padding: .675rem .5rem
 
+$modal-max-width: 48rem
+$modal-margin: 5rem auto 0
+
 $browsers: '', '-moz-', '-webkit-', '-ms-'
 =transition($sec, $type: all, $accel: ease)
 	@each $browser in $browsers
@@ -78,6 +81,7 @@ header
 		background-color: $nav-bgcolor
 		width: $nav-width-desktop
 		height: 100vh
+		z-index: 18
 		ul
 			padding: $nav-padding-inside
 			margin: 0
@@ -206,6 +210,27 @@ main
 		&:hover
 			box-shadow: 0 0 .5rem .25rem rgba(0, 0, 0, .08)
 
+.modal
+	position: fixed
+	top: 0
+	left: 0
+	right: 0
+	max-width: $modal-max-width
+	margin: $modal-margin
+	background-color: $white
+	box-shadow: 0 0 .5rem .5rem rgba(0, 0, 0, 0.15)
+	z-index: 99
+	display: none
+	&::after
+		display: block
+		content: ""
+		position: fixed
+		top: 0
+		left: 0
+		right: 0
+		bottom: 0
+		z-index: -1
+		background-color: rgba(0, 0, 0, 0.08)
 
 @media screen and ( max-width: 48rem )
 	header

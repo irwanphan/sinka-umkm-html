@@ -183,3 +183,10 @@ const fetchDaftarUMKMWithPesan = () => {
     getapi(api_url)
     
 }
+
+const showModal = (id) => {
+    const targetedModal = document.getElementById(id)
+    if (targetedModal.classList.contains('modal')) {
+        targetedModal.style.display = 'block'
+    }
+}
