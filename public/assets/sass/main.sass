@@ -33,8 +33,9 @@ $form-danger-button-bgcolor: $red-light
 
 $table-col-padding: .675rem .5rem
 
-$modal-max-width: 48rem
-$modal-margin: 5rem auto 0
+$modal-max-width: 30rem
+$modal-margin: 9rem auto 0
+$modal-padding: 1.25rem
 
 $browsers: '', '-moz-', '-webkit-', '-ms-'
 =transition($sec, $type: all, $accel: ease)
@@ -138,7 +139,7 @@ main
 				padding-top: .875rem
 			label
 				text-transform: capitalize
-			input, select
+			input, select, textarea
 				background-color: $form-fieldset-bgcolor
 				padding: $form-fieldset-input-padding
 				line-height: $form-fieldset-height
@@ -215,22 +216,19 @@ main
 	top: 0
 	left: 0
 	right: 0
-	max-width: $modal-max-width
-	margin: $modal-margin
-	background-color: $white
-	box-shadow: 0 0 .5rem .5rem rgba(0, 0, 0, 0.15)
-	z-index: 99
-	display: none
-	&::after
+	bottom: 0
+	z-index: 98
+	background-color: rgba(0, 0, 0, 0.08)
+	content: ""
+	// display: none
+	.modal-content
 		display: block
-		content: ""
-		position: fixed
-		top: 0
-		left: 0
-		right: 0
-		bottom: 0
-		z-index: -1
-		background-color: rgba(0, 0, 0, 0.08)
+		max-width: $modal-max-width
+		margin: $modal-margin
+		background-color: $white
+		box-shadow: 0 0 .5rem .5rem rgba(0, 0, 0, 0.15)
+		z-index: 99
+		padding: $modal-padding
 
 @media screen and ( max-width: 48rem )
 	header

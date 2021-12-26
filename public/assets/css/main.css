@@ -99,7 +99,7 @@ main {
       padding-top: 0.875rem; }
     main form fieldset label {
       text-transform: capitalize; }
-    main form fieldset input, main form fieldset select {
+    main form fieldset input, main form fieldset select, main form fieldset textarea {
       background-color: #F8F8F8;
       padding: 0 1.5rem;
       line-height: 3rem;
@@ -109,15 +109,15 @@ main {
       overflow: hidden;
       text-overflow: ellipsis;
       white-space: nowrap; }
-      main form fieldset input::-webkit-input-placeholder, main form fieldset select::-webkit-input-placeholder {
+      main form fieldset input::-webkit-input-placeholder, main form fieldset select::-webkit-input-placeholder, main form fieldset textarea::-webkit-input-placeholder {
         color: gray; }
-      main form fieldset input:-ms-input-placeholder, main form fieldset select:-ms-input-placeholder {
+      main form fieldset input:-ms-input-placeholder, main form fieldset select:-ms-input-placeholder, main form fieldset textarea:-ms-input-placeholder {
         color: gray; }
-      main form fieldset input::placeholder, main form fieldset select::placeholder {
+      main form fieldset input::placeholder, main form fieldset select::placeholder, main form fieldset textarea::placeholder {
         color: gray; }
-      main form fieldset input[type="date"], main form fieldset select[type="date"] {
+      main form fieldset input[type="date"], main form fieldset select[type="date"], main form fieldset textarea[type="date"] {
         font-family: Poppins, "Century Gothic", Tahoma, Lato, Calibri Light, Arial; }
-      main form fieldset input[type="text"], main form fieldset input[type="date"], main form fieldset input[type="password"], main form fieldset input[type="number"], main form fieldset select[type="text"], main form fieldset select[type="date"], main form fieldset select[type="password"], main form fieldset select[type="number"] {
+      main form fieldset input[type="text"], main form fieldset input[type="date"], main form fieldset input[type="password"], main form fieldset input[type="number"], main form fieldset select[type="text"], main form fieldset select[type="date"], main form fieldset select[type="password"], main form fieldset select[type="number"], main form fieldset textarea[type="text"], main form fieldset textarea[type="date"], main form fieldset textarea[type="password"], main form fieldset textarea[type="number"] {
         width: 100%; }
   main table {
     width: 100%;
@@ -181,22 +181,18 @@ main {
   top: 0;
   left: 0;
   right: 0;
-  max-width: 48rem;
-  margin: 5rem auto 0;
-  background-color: #ffffff;
-  box-shadow: 0 0 0.5rem 0.5rem rgba(0, 0, 0, 0.15);
-  z-index: 99;
-  display: none; }
-  .modal::after {
+  bottom: 0;
+  z-index: 98;
+  background-color: rgba(0, 0, 0, 0.08);
+  content: ""; }
+  .modal .modal-content {
     display: block;
-    content: "";
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    z-index: -1;
-    background-color: rgba(0, 0, 0, 0.08); }
+    max-width: 30rem;
+    margin: 9rem auto 0;
+    background-color: #ffffff;
+    box-shadow: 0 0 0.5rem 0.5rem rgba(0, 0, 0, 0.15);
+    z-index: 99;
+    padding: 1.25rem; }
 
 @media screen and (max-width: 48rem) {
   header nav {
