@@ -66,8 +66,12 @@
     </main>
 </body>
 
+<script src="./assets/js/app.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <script>
+    docReady()
+    checkLogin()
+
     var ctx = document.getElementById('chartEmployerGender');
     var chartEmployerGender = new Chart(ctx, {
         type: 'doughnut',
