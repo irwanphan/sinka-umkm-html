@@ -184,7 +184,8 @@ main {
   bottom: 0;
   z-index: 98;
   background-color: rgba(0, 0, 0, 0.08);
-  content: ""; }
+  content: "";
+  display: none; }
   .modal .modal-content {
     display: block;
     max-width: 30rem;
