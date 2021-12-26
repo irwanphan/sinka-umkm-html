@@ -128,3 +128,58 @@ const fetchDaftarUMKM = () => {
     getapi(api_url)
     
 }
+
+const fetchDaftarUMKMWithPesan = () => {
+    const token = sessionStorage.getItem('token')
+    // console.log(token)
+    
+    const myHeaders = new Headers({
+        'Content-Type': 'application/json',
+        'Accept': 'application/json',
+        'Authorization': `Bearer ${token}`,
+    });
+
+    const requestOptions = {
+        method: 'GET',
+        headers: myHeaders,
+    };
+    
+    const hideLoader = () => {
+        const loadingElement = document.getElementById('loading')
+        loadingElement.remove()
+    }
+
+    const show = (data) => {
+        let tableData = ''
+        
+        for (let r of data) {
+            tableData += `<tr> 
+                <td>${r.id} </td>
+                <td>${r.user.nama}</td>
+                <td>${r.nama_usaha}</td> 
+                <td>
+                    <input type="checkbox">
+                </td>          
+            </tr>`;
+        }
+        // Setting innerHTML as tab variable
+        document.getElementById("rowData").innerHTML = tableData;
+    }
+
+    const api_url = "https://api.kolektif-umkm.turbin.id/api/usaha"
+    async function getapi(url) {
+
+        // Storing response
+        const response = await fetch(url, requestOptions)
+        // Storing data in form of JSON
+        var data = await response.json()
+        console.log(data)
+        if (data.status == 'Token is Expired') window.location.replace('./login.html')
+        if (response) {
+            hideLoader()
+        }
+        show(data);
+    }
+    getapi(api_url)
+    
+}
