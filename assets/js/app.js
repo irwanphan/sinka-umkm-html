@@ -1,3 +1,19 @@
+const docReady = (fn) => {
+    // see if DOM is already available
+    if (document.readyState === "complete" || document.readyState === "interactive") {
+        // call on next available tick
+        setTimeout(fn, 1);
+    } else {
+        document.addEventListener("DOMContentLoaded", fn);
+    }
+}  
+
+const checkLogin = () => {
+    const token = sessionStorage.getItem('token')
+    console.log(token)
+    // return token
+}
+
 const login = () => {
     const username = document.getElementById("username").value
     const password = document.getElementById("password").value
@@ -23,9 +39,11 @@ const login = () => {
             // console.log(responseJson)
             const token = responseJson.token
             if (responseJson.success) {
-                localStorage.setItem('username', username)
-                localStorage.setItem('token', token)
                 // console.log(token)
+                sessionStorage.setItem('username', username)
+                sessionStorage.setItem('token', token)
+                // const checkToken = sessionStorage.getItem('token')
+                // console.log(checkToken)
                 window.location.replace('./index.html')
             } 
             return responseJson.token
@@ -36,7 +54,7 @@ const login = () => {
 
 
 const fetchDaftarUMKM = () => {
-    const token = localStorage.getItem('token')
+    const token = sessionStorage.getItem('token')
     console.log(token)
     var myHeaders = new Headers({'Content-Type': 'application/json'});  
     myHeaders.append('Authorization','Bearer {token}')
