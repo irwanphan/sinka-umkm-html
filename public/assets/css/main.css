@@ -185,7 +185,12 @@ main {
     width: 100%; }
 
   main.content {
-    padding-left: 4rem; }
+    padding: 1rem;
+    padding-top: 4rem; }
+  main table tr td:last-child {
+    white-space: initial; }
+  main table tr td button, main table tr td .button {
+    margin: 0.25rem; }
 
   .columns {
     display: block; }
