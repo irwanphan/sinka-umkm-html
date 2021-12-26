@@ -187,10 +187,10 @@ main {
   main.content {
     padding: 1rem;
     padding-top: 4rem; }
-  main table tr td:last-child {
-    white-space: initial; }
-  main table tr td button, main table tr td .button {
-    margin: 0.25rem; }
+  main table {
+    display: block;
+    overflow-x: auto;
+    white-space: nowrap; }
 
   .columns {
     display: block; }
