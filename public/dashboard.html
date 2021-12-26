@@ -37,10 +37,183 @@
     <main class="content">
         <h1>dashboard UMKM</h1>
         
-        <h2>sepuluh UMKM omset terbesar</h2>
-        <h2>sepuluh UMKM omset terkecil</h2>
-        <h2>pemilik UMKM berdasarkan jenis kelamin</h2>
-        <h2>karyawan UMKM berdasarkan jenis kelamin</h2>
+        <div class="columns">
+            <div class="column">
+                <h2>sepuluh UMKM omset terbesar</h2>
+                <canvas class="chart" id="chartTenHighest"></canvas>
+            </div>
+            <div class="column">
+                <h2>sepuluh UMKM omset terkecil</h2>
+                <canvas class="chart" id="chartTenLowest"></canvas>
+            </div>
+        </div>
+        
+        <br>
+
+        <div class="columns">
+            <div class="column">
+                <h2>pemilik UMKM berdasarkan jenis kelamin</h2>
+                <canvas class="chart" id="chartEmployerGender"></canvas>
+            </div>
+            <div class="column">
+                <h2>karyawan UMKM berdasarkan jenis kelamin</h2>
+                <canvas class="chart" id="chartEmployeeGender"></canvas>
+            </div>
+        </div>
+
     </main>
 </body>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>
+    var ctx = document.getElementById('chartEmployerGender');
+    var chartEmployerGender = new Chart(ctx, {
+        type: 'doughnut',
+        data: {
+            labels: ['Laki-laki', 'Perempuan'],
+            datasets: [{
+                label: '# of Votes',
+                data: [1234, 1945],
+                backgroundColor: [
+                    'rgba(255, 99, 132, 0.2)',
+                    'rgba(54, 162, 235, 0.2)',
+                ],
+                borderColor: [
+                    'rgba(255, 99, 132, 1)',
+                    'rgba(54, 162, 235, 1)',
+                ],
+                borderWidth: 1
+            }]
+        },
+        options: {
+            scales: {
+                y: {
+                    beginAtZero: true
+                }
+            }
+        }
+    });
+
+    var ctx1 = document.getElementById('chartEmployeeGender');
+    var chartEmployerGender = new Chart(ctx1, {
+        type: 'doughnut',
+        data: {
+            labels: ['Laki-laki', 'Perempuan'],
+            datasets: [{
+                label: '# of Votes',
+                data: [12345, 10945],
+                backgroundColor: [
+                    'rgba(255, 99, 132, 0.2)',
+                    'rgba(54, 162, 235, 0.2)',
+                ],
+                borderColor: [
+                    'rgba(255, 99, 132, 1)',
+                    'rgba(54, 162, 235, 1)',
+                ],
+                borderWidth: 1
+            }]
+        },
+        options: {
+            scales: {
+                y: {
+                    beginAtZero: true
+                }
+            }
+        }
+    });
+
+    var ctx2 = document.getElementById('chartTenLowest');
+    var chartEmployerGender = new Chart(ctx2, {
+        type: 'bar',
+        data: {
+            labels: [
+                'Usaha 1', 
+                'Usaha 2', 
+                'Usaha 3', 
+                'Usaha 4', 
+                'Usaha 5', 
+                'Usaha 6', 
+                'Usaha 7' 
+            ],
+            datasets: [{
+                label: 'omset',
+                data: [6500000, 5900000, 8000000, 8100000, 5600000, 5500000, 4000000],
+                backgroundColor: [
+                    'rgba(255, 99, 132, 0.2)',
+                    'rgba(255, 159, 64, 0.2)',
+                    'rgba(255, 205, 86, 0.2)',
+                    'rgba(75, 192, 192, 0.2)',
+                    'rgba(54, 162, 235, 0.2)',
+                    'rgba(153, 102, 255, 0.2)',
+                    'rgba(201, 203, 207, 0.2)'
+                ],
+                borderColor: [
+                    'rgb(255, 99, 132)',
+                    'rgb(255, 159, 64)',
+                    'rgb(255, 205, 86)',
+                    'rgb(75, 192, 192)',
+                    'rgb(54, 162, 235)',
+                    'rgb(153, 102, 255)',
+                    'rgb(201, 203, 207)'
+                ],
+                borderWidth: 1
+            }]
+        },
+        options: {
+            scales: {
+                y: {
+                    beginAtZero: true
+                }
+            }
+        }
+    });
+
+    var ctx3 = document.getElementById('chartTenHighest');
+    var chartEmployerGender = new Chart(ctx3, {
+        type: 'bar',
+        data: {
+            labels: [
+                'Usaha 1', 
+                'Usaha 2', 
+                'Usaha 3', 
+                'Usaha 4', 
+                'Usaha 5', 
+                'Usaha 6', 
+                'Usaha 7' 
+            ],
+            datasets: [{
+                label: 'omset',
+                data: [6500000, 5900000, 8000000, 8100000, 5600000, 5500000, 4000000],
+                backgroundColor: [
+                    'rgba(255, 99, 132, 0.2)',
+                    'rgba(255, 159, 64, 0.2)',
+                    'rgba(255, 205, 86, 0.2)',
+                    'rgba(75, 192, 192, 0.2)',
+                    'rgba(54, 162, 235, 0.2)',
+                    'rgba(153, 102, 255, 0.2)',
+                    'rgba(201, 203, 207, 0.2)'
+                ],
+                borderColor: [
+                    'rgb(255, 99, 132)',
+                    'rgb(255, 159, 64)',
+                    'rgb(255, 205, 86)',
+                    'rgb(75, 192, 192)',
+                    'rgb(54, 162, 235)',
+                    'rgb(153, 102, 255)',
+                    'rgb(201, 203, 207)'
+                ],
+                borderWidth: 1
+            }]
+        },
+        options: {
+            scales: {
+                y: {
+                    beginAtZero: true
+                }
+            }
+        }
+    });
+
+</script>
+
 </html>

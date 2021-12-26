@@ -34,7 +34,7 @@ const login = () => {
         redirect: 'follow'
     };
 
-    fetch("http://api.kolektif-umkm.turbin.id/api/login", requestOptions)
+    fetch("https://api.kolektif-umkm.turbin.id/api/login", requestOptions)
         .then(response => response.json())
         .then(responseJson => {
             // console.log(responseJson)
@@ -61,7 +61,7 @@ const logout = () => {
         headers: myHeaders
     };
 
-    fetch("http://api.kolektif-umkm.turbin.id/api/logout", requestOptions)
+    fetch("https://api.kolektif-umkm.turbin.id/api/logout", requestOptions)
         .then(response => {
             console.log(response)
             if (response.status == 200) {
@@ -111,7 +111,7 @@ const fetchDaftarUMKM = () => {
         document.getElementById("rowData").innerHTML = tableData;
     }
 
-    const api_url = "http://api.kolektif-umkm.turbin.id/api/usaha"
+    const api_url = "https://api.kolektif-umkm.turbin.id/api/usaha"
     async function getapi(url) {
 
         // Storing response
