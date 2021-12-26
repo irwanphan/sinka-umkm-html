@@ -41,8 +41,6 @@
             <a href="./daftar-umkm.html" class="button submit">daftar baru</a>
         </div>
 
-        <div id="loading"></div>
-
         <table id="daftar_umkm">
             <thead>
                 <tr>
@@ -52,25 +50,11 @@
                     <th>Aksi</th>
                 </tr>
             </thead>
-            <tbody>
-                <tr>
-                    <td>1</td>
-                    <td>Eleanor Pena</td>
-                    <td>Good Fortune Supermarket</td>
-                    <td>
-                        <button>atur</button>
-                        <button class="danger">hapus</button>
-                    </td>
+            <tbody id="rowData">
+                <tr id="loading">
+                    <td>loading ...</td>
                 </tr>
-                <tr>
-                    <td>2</td>
-                    <td>Diane Russel</td>
-                    <td>Superior Super Warehouse</td>
-                    <td>
-                        <button>atur</button>
-                        <button class="danger">hapus</button>
-                    </td>
-                </tr>
+                
             </tbody>
         </table>
     </main>
