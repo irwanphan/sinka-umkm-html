@@ -51,22 +51,24 @@ const login = () => {
         .catch(error => console.log('error', error))
 }
 
-
-
 const fetchDaftarUMKM = () => {
     const token = sessionStorage.getItem('token')
     console.log(token)
-    var myHeaders = new Headers({'Content-Type': 'application/json'});  
-    myHeaders.append('Authorization','Bearer {token}')
     
-    var requestOptions = {
+    const myHeaders = new Headers({
+        'Content-Type': 'application/json',
+        'Accept': 'application/json',
+        'Authorization': `Bearer ${token}`,
+    });
+
+    const requestOptions = {
         method: 'GET',
         headers: myHeaders,
-        redirect: 'follow'
     };
     
     const api_url = "http://api.kolektif-umkm.turbin.id/api/usaha"
     async function getapi(url) {
+
         // Storing response
         const response = await fetch(url, requestOptions);
         // Storing data in form of JSON
