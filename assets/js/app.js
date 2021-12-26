@@ -52,39 +52,26 @@ const login = () => {
         .catch(error => console.log('error', error))
 }
 
-// const login = () => {
-//     var myHeaders = new Headers();
-//     myHeaders.append("Content-Type", "application/json")
+const logout = () => {
+    var myHeaders = new Headers();
+    myHeaders.append("Content-Type", "application/json")
 
-//     var raw = JSON.stringify({
-//         "no_hp": username,
-//         "password": password
-//     });
+    var requestOptions = {
+        method: 'POST',
+        headers: myHeaders
+    };
 
-//     var requestOptions = {
-//         method: 'POST',
-//         headers: myHeaders,
-//         body: raw,
-//         redirect: 'follow'
-//     };
-
-//     fetch("http://api.kolektif-umkm.turbin.id/api/login", requestOptions)
-//         .then(response => response.json())
-//         .then(responseJson => {
-//             // console.log(responseJson)
-//             const token = responseJson.token
-//             if (responseJson.success) {
-//                 // console.log(token)
-//                 sessionStorage.setItem('username', username)
-//                 sessionStorage.setItem('token', token)
-//                 // const checkToken = sessionStorage.getItem('token')
-//                 // console.log(checkToken)
-//                 window.location.replace('./index.html')
-//             } 
-//             return responseJson.token
-//         })
-//         .catch(error => console.log('error', error))
-// }
+    fetch("http://api.kolektif-umkm.turbin.id/api/logout", requestOptions)
+        .then(response => {
+            console.log(response)
+            if (response.status == 200) {
+                sessionStorage.removeItem('token')
+                window.location.replace('./login.html')
+            } 
+            return response.token
+        })
+        .catch(error => console.log('error', error))
+}
 
 const fetchDaftarUMKM = () => {
     const token = sessionStorage.getItem('token')
